@@ -1,0 +1,982 @@
+{
+	"info": {
+		"_postman_id": "e40ee45b-f3ff-4fb1-99d6-bb5e47b7514d",
+		"name": "HayaCoffee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23706916"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GET All Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "category",
+									"value": "jajanan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/products/all",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "p0059",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Kopi Susu Gula Aren",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "coffee",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "15000",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "sold",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "foreign",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/products/add",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "category",
+									"value": "new smoothies",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/products/modify/:id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"products",
+								"modify",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "p0091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "p0075",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/products/del/:id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"products",
+								"del",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "p0050"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/products/search",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "milk",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Product by Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/products/sortsold?sold=desc",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"products",
+								"sortsold"
+							],
+							"query": [
+								{
+									"key": "sold",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Product by Price",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Product by Newest",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Product by category",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Promos",
+			"item": [
+				{
+					"name": "GET All Promos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Promos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "15%",
+									"type": "text"
+								},
+								{
+									"key": "free_delivery",
+									"value": "YES",
+									"type": "text"
+								},
+								{
+									"key": "valid_until",
+									"value": "07-22-2022",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/promos/add",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"promos",
+								"add"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "25%",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Promos",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "discount",
+									"value": "5%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/promos/modify/:id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"promos",
+								"modify",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Promos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/promos/del/:id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"promos",
+								"del",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Promos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/promos/search?free_delivery=no",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"promos",
+								"search"
+							],
+							"query": [
+								{
+									"key": "free_delivery",
+									"value": "no"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort promos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/promos/sort",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"promos",
+								"sort"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Promos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/promos/filter",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"promos",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/all",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "order_id",
+									"value": "id06",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "awaiting payment",
+									"type": "text"
+								},
+								{
+									"key": "quantity_ordered",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "product_code",
+									"value": "p09x",
+									"type": "text"
+								},
+								{
+									"key": "order_date",
+									"value": "2022-09-09T03:17:05.816Z",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/add",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Transactions",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "success",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/modify/:order_id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"modify",
+								":order_id"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "id05"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Transactions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/del/:order_id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"del",
+								":order_id"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "id06"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/search?status=success",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"search"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "success"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/sort",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"sort"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/transactions/filter",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"transactions",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/all",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Aisyah",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aisyahqu12",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "08571356498",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "aisyah@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "bangka street no.1 Surakarta",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "female",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "02-11-97",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/add",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"add"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Users",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "bangka street no.2 Surakarta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/modify/:id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"modify",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/del/:id",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"del",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/search?gender=female",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "female"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/sort",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"sort"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/filter",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Pass",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ito",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "luqm4n99",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "08576516165",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ito@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "street of wols no.2",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "11-11-1993",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/users/edit_pass",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"users",
+								"edit_pass"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "deri@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "deri1212",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}{{PREFIX}}/auth",
+							"host": [
+								"{{HOST}}{{PREFIX}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload Pic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Loekman/Downloads/Visual Background - Fullstack Webiste-01.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/uploads/images/image-1665908957731-897.jpg",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"uploads",
+						"images",
+						"image-1665908957731-897.jpg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
